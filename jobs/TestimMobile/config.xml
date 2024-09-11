@@ -1,0 +1,49 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Mobile demo runs across 2 devices in parallel</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>TestimToken</name>
+          <defaultValue>aAyH74X57ln9Qv1kRoy4XuSCalyqYgO8sf2am75gqk4WJ1Ju6g</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TestimGrid</name>
+          <defaultValue>testim-ha-grid</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>$BUILD_NUMBER</name>
+          <defaultValue>$BUILD_NUMBER</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TestimProject</name>
+          <defaultValue>MpaLERmvkXYruEFhVNcu</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>testim --token &quot;aAyH74X57ln9Qv1kRoy4XuSCalyqYgO8sf2am75gqk4WJ1Ju6g&quot; --project &quot;MpaLERmvkXYruEFhVNcu&quot; --grid &quot;Virtual Mobile Grid&quot; --suite &quot;mobileSuite&quot; --mode &quot;appium&quot; --result-label $BUILD_NUMBER --turbo-mode</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.26"/>
+  </buildWrappers>
+</project>
